@@ -58,7 +58,7 @@ In these present situations, it is difficult for poor people to even afford food
 
 ★ Next run the command: ```pip install Pillow```
 
-### NOTE: All the required packages can be downloaded by running the command 
+#### NOTE: All the required packages can be downloaded by running the command 
 ```pip install -r requirements.txt```
 
 ★ Next run the command: ```python mangage.py makemigrations```
