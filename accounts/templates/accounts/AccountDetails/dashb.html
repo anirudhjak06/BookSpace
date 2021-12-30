@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <title>Account Details</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static '/css/AccountDetails/dashb.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static '/css/AccountDetails/dashb2.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static '/css/AccountDetails/navb.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static '/js/AccountDetails/dashb.js' %}"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        
+        .hello-msg12 {
+            font-size: 18px;
+            color: #fff;
+            margin-right: 15px;
+        }
+
+        body {
+            background-image: url("https://i.pinimg.com/originals/e6/c1/a9/e6c1a9c51db5983bc88100648d5f3dfb.jpg");
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="topnav" id="myTopnav">
+
+    <a href="{% url 'home' %}" style="text-decoration:none;">LOGO</a>
+
+    <a href="{% url 'store' %}"><i class="fa fa-fw fa-shopping-bag"></i> Shop</a>
+    <a href="{% url 'donate' %}"><i class="fa fa-fw fa-gift"></i> Donate</a>
+    <a href="{% url 'halloffame' %}"><i class=" fa fa-fw fa-user "></i> Hall Of Fame</a>
+    <a href="{% url 'aboutus' %}"><i class="fa fa-fw fa-info "></i> About</a>
+
+
+    <div class="login-container">
+        <a class="active">Hello, {{request.user.customer}}</a>
+        {% if request.user.is_active %}
+        <a class="hello-msg12" href="{% url 'logout' %} ">Logout</a>
+        {% else %}
+        <a class="hello-msg12" href="{% url 'login' %} ">Login</a>
+        {% endif %}
+
+    </div>
+
+    <a class="icon " href="javascript:void(0); " onclick="myFunction() ">
+        <i class="fa fa-bars "></i>
+    </a>
+
+</div>
+
+<div class="sidebar">
+    <p id="rcorners1">
+        <img alt="Profile Photo" height="50%" horizontal-align:middle src="{{request.user.customer.profile_pic.url}}" width="100%">
+        <a class="active" href="#home">My Account</a>
+        <a href="{% url 'orderdetails' %}">Orders</a>
+        <a>Donated: {{request.user.customer.booksdonated}}</a>
+    </p>
+</div>
+
+<div class="content">
+    <div class="container">
+
+        <form method="POST" action="" enctype="multipart/form-data" style="max-width:500px;margin:auto">
+            <h2>
+                <center>Account Details</center>
+            </h2>
+            {% csrf_token %}
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <!-- {% comment %}  -->
+                <input class="input-field" name="fstnm" placeholder="First Name" type="text"> 
+                <!-- {% endcomment %} -->
+                {{form.name}}
+            </div>
+            
+
+            <div class="input-container">
+                <i class="fa fa-envelope icon"></i>
+                {{form.email}}
+            </div>
+            
+
+            <div class="input-container">
+                <i class="fa fa-phone icon"></i>
+                {{form.phone}}
+            </div>
+
+            
+            <div class="input-container">
+                <i class="fa fa-home icon"></i>
+                {{form.door}}
+            </div>
+            <div class="input-container">
+                <i class="fa fa-home icon"></i>
+                {{form.landmark}}
+            </div>
+            <div class="input-container">
+                <i class="fa fa-home icon"></i>
+                {{form.city}}
+            </div>
+            <div class="input-container">
+                <i class="fa fa-home icon"></i>
+                {{form.pincode}}
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-home icon"></i>
+                {{form.state}}
+            </div>
+
+               {{form.profile_pic}}
+
+
+            <button class="btn" type="submit">Update</button>
+        </form>
+        {{form.errors}}
+    </div>
+</div>
+
+<div>
+    <p style="margin-left: 2.5em;padding: 0 17em 12em 0;border-width: 0px; border-color: black; border-style:solid;"></p>
+</div>
+
+<!--footer-->
+<div class="container-fluid bg-dark text-white">
+    <div class="container">
+        <div class="row ">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer pt-5">
+                <p style="font-size:20px;text-transform: uppercase;font-weight: 800;" data-aos="slide-right">Book Space
+                </p>
+                <p data-aos="slide-right">
+                    <a href="{% url 'store' %}" style="color: white;"><i></i> Shop</a>
+                    <br>
+                    <a href="{% url 'donate' %}" style=" color: white; "><i></i>Donate</a>
+                    <br>
+                    <a href="{% url 'halloffame' %}" style="color: white; "><i></i>Hall Of Fame</a>
+                    <br>
+                    <a href="{% url 'aboutus' %}" style="color: white; "><i></i>About Us</a>
+                    <br>
+
+                </p>
+            </div>
+            <div class="col-xl-3 pt-5 hide-girl ">
+                <p style="font-size:20px;text-transform: uppercase;font-weight: 800;" data-aos="slide-right">Books</p>
+                
+                <p data-aos="slide-right">
+                    <a href="/store/?categories=1" style="color: white;"><i></i>Engineering Books</a>
+                    <br>
+                    <a href="/store/?categories=2" style="color: white;"><i></i>Medical Books</a>
+                    <br>
+                    <a href="/store/?categories=3" style="color: white;"><i></i>Economics</a>
+                    <br>
+                    <a href="/store/?categories=4" style="color: white;"><i></i>JEE MPC</a>
+                    <br>
+                    <a href="/store/?categories=5" style="color: white;"><i></i>JEE BiPC</a>
+                </p>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12 footer pt-5 ">
+
+                <p style="font-size:20px;text-transform: uppercase;font-weight: 800;" data-aos="slide-right">Help</p>
+                
+                <p data-aos="slide-right">
+                    <a href="/comingsoon/" target="_blank" style="color: white;"><i></i>Privacy Policy</a>
+                    <br>
+                    <a href="/comingsoon/" target="_blank" style="color: white;"><i></i>Terms and Conditions</a>
+                    <br>
+                    <a href="/comingsoon/" target="_blank" style="color: white;"><i></i>Book Condition Guidelines</a>
+                    <br>
+                    <a href="/comingsoon/" target="_blank" style="color: white;"><i></i>Return Policy</a>
+                    <br>
+                    <a href="{% url 'faq' %}" style="color: white; "><i></i>FAQ</a>
+                </p>
+                <!--<span style="font-size:20px;text-transform: uppercase;font-weight: 800; " class="text-center " data-aos="zoom-in-left ">HELP</span><br>
+                <p style="margin-top:3%;margin-left:1%; " data-aos="fade-up ">Privacy Policy</p>
+                <p style="margin-top:-3%;margin-left:1%; " data-aos="fade-up ">Terms and Conditions</p>
+                <p style="margin-top:-3%;margin-left:1%; " data-aos="fade-up ">Book Condition Guidelines</p>
+                <p style="margin-top:-3%;margin-left:1%; " data-aos="fade-up "><a href="{% url 'faq' %}" style="color: white; "><i></i>FAQ</a>
+                </p>-->
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-12 col-12 footer pt-5 pb-3 ">
+            
+                <p style="font-size:20px;text-transform: uppercase;font-weight: 800; " data-aos="slide-right">contact
+                </p>
+                <p data-aos="slide-right"><i class="fa fa-home " aria-hidden="true " style="font-size:20px; "></i>&nbsp;India
+                </p>
+                <p data-aos="slide-right"><i class="fa fa-envelope " aria-hidden="true "></i>&nbsp; <a href="mailto:bookspace30@gmail.com ">BookSpace</a></p>
+                <p data-aos="slide-right"><i class="fa fa-phone " aria-hidden="true "></i>&nbsp; + 01 234 567 88</p>
+                <p data-aos="slide-right"><i class="fa fa-print " aria-hidden="true "></i>&nbsp; + 01 234 567 89</p>
+            </div>
+        </div>
+    </div>
+    <hr style="color:white;width:100%;border:1px solid ">
+    <div class="container mt-4 pb-4 ">
+        <div class="row">
+            <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+                <p>© 2024 Copyright:<span style="font-weight:600 "> Book Space</span></p>
+            </div>
+            <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6 icon-head ">
+                <span class="icons-2 "><a class="fa fa-facebook " aria-hidden="true "
+                        href="https://www.facebook.com/Book-Space-108366354745575 " target="blank "
+                        style="color: white; "></a></span>
+                <span class="icons-3 "><a class="fa fa-twitter " aria-hidden="true "
+                        href="https://twitter.com/BookSpa40608444" target="blank " style="color: white; "></a></span>
+                <span class="icons-1 "><a class="fa fa-linkedin " aria-hidden="true "
+                        href="https://www.linkedin.com/company/book-space/" target="blank"
+                        style="color: white; "></a></span>
+                <span class="icons "><a class="fa fa-instagram " aria-hidden="true "
+                    href="https://www.instagram.com/bookspace12/" target="blank"
+                        style="color: white; "></a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+
+<script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+</script>
+
+<script>
+		/* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+		//We start indexing at one because CSRF_token is considered and input field 
+		 */
+
+		//Query All input fields
+		var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Username';
+		form_fields[2].placeholder='Email';
+		form_fields[3].placeholder='Phone Number';
+		form_fields[4].placeholder='Door No';
+		form_fields[5].placeholder='Landmark';
+		form_fields[6].placeholder='City/Town';
+		form_fields[7].placeholder='Pincode';
+		form_fields[8].placeholder='State';
+
+
+		for (var field in form_fields){	
+			form_fields[field].className += ' form-control'
+		}
+	</script>
+
+</body>
+
+</html>
