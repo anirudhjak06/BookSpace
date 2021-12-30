@@ -2,17 +2,17 @@
 ## An Online Book Store Project using Django
 
 ## Project name
-Book Space
+Book Space📚
  
 ## Project Idea
 An Online Book Store
 
 ## Problem Motivation 
-The main motivation of the project is to help the poor by giving books for free. The primary focus will be to help the poor, but it will also be helpful to other people as well.
+The main motivation of the project is to help the poor by giving books for free💰. The primary focus will be to help the poor, but it will also be helpful to other people as well.
 
 ## Problem Statement 
 
-In these present situations, it is difficult for poor people to even afford food, thus affording money for buying books has become a big burden for their child's education!!
+In these present situations, it is difficult for poor people to even afford food, thus affording money for buying books has become a big burden for their child's education 🧑‍🎓!!
 
 ## Problem Solution
 
@@ -20,11 +20,11 @@ In these present situations, it is difficult for poor people to even afford food
 
 - The  👨‍💻donors will have to donate their old books to our website and we collect them and add them to our website.
 
-- The sellers can come to our website and get the books for free of cost from our website.
+- The sellers can come to our website and get the books for free of cost from our website💻.
 
 ## Project Overall Idea
 
-- People who want to donate their books can login to this website and can fill in the details of the book like name,genre and condition of the book.
+- People who want to donate their books can login to this website and can fill in the details of the book like name, genre and condition of the book.
 
 - If the book is in good condition to read, then the user can fill the address and then a pick up guy comes to receive it.
 
@@ -70,7 +70,7 @@ For more details about the project please refer to [**"Book Space Documentation.
 
 ★ Next run the command: ```python manage.py migrate```
 
-★ Finally to run the server use the following command: python manage.py runserver
+★ Finally to run the server use the following command: ```python manage.py runserver```
 
 ★ Then the terminal will prompt to open a URL or else type http://127.0.0.1:8000/
 
