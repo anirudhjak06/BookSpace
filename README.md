@@ -1,10 +1,10 @@
 # BookSpace
-## An Online Free Book Store Project using Django
+## An Online Book Store Project using Django
 
-## Project name :
+## Project name
 Book Space
  
-## Project Idea: 
+## Project Idea
 An Online Book Store
 
 ## Problem Motivation 
@@ -14,7 +14,7 @@ The main motivation of the project is to help the poor by giving books for free.
 
 In these present situations, it is difficult for poor people to even afford food, thus affording money for buying books has become a big burden for their child's education!!
 
-## Problem Solution :
+## Problem Solution
 
 - This website will play a major role in giving books to the poor for free which will be very helpful for them.
 
@@ -22,7 +22,7 @@ In these present situations, it is difficult for poor people to even afford food
 
 - The sellers can come to our website and get the books for free of cost from our website.
 
-## Project Overall Idea :
+## Project Overall Idea
 
 - People who want to donate their books can login to this website and can fill in the details of the book like name,genre and condition of the book.
 
@@ -38,35 +38,38 @@ In these present situations, it is difficult for poor people to even afford food
 
 ## Tools Required
 
-Browsers like Chrome that can run HTML5, CSS3, JavaScript ,Jquery and Bootstrap.
+- Browsers like Chrome that can run HTML5, CSS3, JavaScript ,Jquery and Bootstrap.
 
-To get the project running, you need Python and Django installed. You also require libraries like Pillow, Django-filters also installed.
+- To get the project running, you need Python and Django installed. You also require libraries like Pillow, Django-filters also installed.
 
-9) Get Started :
+## Get Started :
 
-Download git from the link: https://git-scm.com/downloads
+★ Download git from the link: https://git-scm.com/downloads
 
-Download and install python from the link: https://www.python.org/downloads/
+★ Download and install python from the link: https://www.python.org/downloads/
 
-Open the command prompt and run the command: git clone https://github.com/bookspace30/BookSpace.git
+★ Open the command prompt and run the command: git clone https://github.com/anirudhjak06/BookSpace
 
-Then cd to Project folder n then perform the below actions :
+★ Then cd to Project folder and then perform the below actions :
 
-Next run the command: pip install django.
+★ Next run the command: pip install django.
 
-Next run the command: pip install django-filter.
+★ Next run the command: pip install django-filter.
 
-Next run the command: pip install Pillow
+★ Next run the command: pip install Pillow
 
-Next run the command: python mangage.py makemigrations
+NOTE: All the required packages can be downloaded by running the command 
+```pip install -r requirements.txt```
 
-Next run the command: python manage.py migrate
+★ Next run the command: python mangage.py makemigrations
 
-Finally to run the server use the following command: python manage.py runserver
+★ Next run the command: python manage.py migrate
 
-Then the terminal will prompt to open a URL or else type http://127.0.0.1:8000/
+★ Finally to run the server use the following command: python manage.py runserver
 
-10) Team members :
+★ Then the terminal will prompt to open a URL or else type http://127.0.0.1:8000/
+
+## Team members :
 
 <pre>
 Anirudh Jakhotia          - S20190010007
