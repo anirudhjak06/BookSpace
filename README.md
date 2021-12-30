@@ -23,7 +23,7 @@ In these present situations, it is difficult for poor people to even afford food
 
 This website will play a major role in giving books to the poor for free which will be very helpful for them.
 
-The donors will have to donate their old books to our website and we collect them and add them to our website.
+The  👨‍💻donors will have to donate their old books to our website and we collect them and add them to our website.
 
 The sellers can come to our website and get the books for free of cost from our website.
 
@@ -35,7 +35,7 @@ People who want to donate their books can login to this website and can fill in 
 
 If the book is in good condition to read, then the user can fill the address and then a pick up guy comes to receive it.
 
-Donors will get points or coupons which will be helpful to buy books from the website with low cost!!
+ 👨‍💻Donors will get points or coupons which will be helpful to buy books from the website with low cost!!
 
 The book will be posted on the website with title, edition, proper photo and grade of the book.
 
@@ -76,8 +76,10 @@ Then the terminal will prompt to open a URL or else type http://127.0.0.1:8000/
 
 10) Team members :
 
-1. Anirudh Jakhotia
-2. Neeraj Dusa
-3. Harish Mullagura
-4. Kanduri Jayanth Sri Ram
-5. Rakesh Ganeshula
+<pre>
+Anirudh Jakhotia          - S20190010007
+Neeraj Dusa               - S20190010047
+Harish Mullagura          - S20190010124
+Rakesh Ganeshula          - S20190010052
+Kanduri Jayanth Sri Ram   - S20190010084
+</pre>
