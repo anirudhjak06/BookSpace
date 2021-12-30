@@ -52,18 +52,18 @@ In these present situations, it is difficult for poor people to even afford food
 
 ★ Then cd to Project folder and then perform the below actions :
 
-★ Next run the command: pip install django.
+★ Next run the command: ```pip install django```
 
-★ Next run the command: pip install django-filter.
+★ Next run the command: ```pip install django-filter```
 
-★ Next run the command: pip install Pillow
+★ Next run the command: ```pip install Pillow```
 
-NOTE: All the required packages can be downloaded by running the command 
+### NOTE: All the required packages can be downloaded by running the command 
 ```pip install -r requirements.txt```
 
-★ Next run the command: python mangage.py makemigrations
+★ Next run the command: ```python mangage.py makemigrations```
 
-★ Next run the command: python manage.py migrate
+★ Next run the command: ```python manage.py migrate```
 
 ★ Finally to run the server use the following command: python manage.py runserver
 
