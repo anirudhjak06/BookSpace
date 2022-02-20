@@ -53,7 +53,7 @@ For more details about the project please refer to [**"Book Space Documentation.
 
 ★ Download and install python from the link: https://www.python.org/downloads/
 
-★ Open the command prompt and run the command: git clone https://github.com/anirudhjak06/BookSpace
+★ Open the command prompt and run the command: ```git clone https://github.com/anirudhjak06/BookSpace ```
 
 ★ Then cd to Project folder and then perform the below actions :
 
