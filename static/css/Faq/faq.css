@@ -175,8 +175,7 @@
     .top-image {
       width: 191px;
       height: 184px;
-      /*background-image: url("{{ STATIC_URL }}images/Faq/illustration-box-desktop.svg");
-      */
+      background-image: url("{{ STATIC_URL }}images/Faq/illustration-box-desktop.svg");
       background-position: center;
     }
   }

@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Book Space</title>
+    <link rel = "icon" href = "{% static '/images/logo5.png' %}" type = "image/png">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
     <script>
@@ -33,7 +35,9 @@
 
         <div class="topnav" id="myTopnav">
 
-            <a href="{% url 'home' %}" style="text-decoration:none;">LOGO</a>
+            <div style="float: left;">
+                <a href="/home/"><img width='220' height='25' src={% static '/images/logo3.png' %}></a> 
+            </div>
 
             <a href="{% url 'store' %}"><i class="fa fa-fw fa-shopping-bag"></i> Shop</a>
             <a href="{% url 'donate' %}"><i class="fa fa-fw fa-gift"></i> Donate</a>
@@ -42,8 +46,10 @@
 
 
             <div class="login-container">
-                <a href="{% url 'accountdetails' %}">Hello, {{request.user.customer}}</a> {% if request.user.is_active %}
+                {% if request.user.is_active %}
+                <a href="{% url 'accountdetails' %}">Hello, {{request.user.customer}}</a> 
                 <a class="hello-msg" href="{% url 'logout' %}">Logout</a> {% else %}
+                <a href="{% url 'accountdetails' %}">Hello, {{request.user}}</a> 
                 <a class="hello-msg" href="{% url 'login' %}">Login</a> {% endif %}
 
             </div>
@@ -55,50 +61,7 @@
         </div>
 
 
-        <!--2nd Page navbar
-    <div class="ui icon item">
-    <i class="large bars icon"></i>
-    </div>
-    <div class="ui icon logo link item">
-    <img class="ui mini right spaced image" alt="" src="http://pac-man.demondevin.modxcloud.com/assets/components/themantic/images/logo.png"> Book Space
-    </div>
-    <div class="ui simple dropdown icon item">
-    Shop
-    <i class="dropdown icon"></i>
-    <div class="menu">
-    <a class="item first active" href="/">Home</a><a class="item" href="showcase">Showcase</a><a class="item" href="kitchen-sink">Kitchen Sink</a><a class="item" href="clean/">Clean</a><a class="item" href="guides/">Guides</a><a class="item last" href="error-codes/">Status Codes</a>
-    </div>
-    </div>
-    <div class="ui simple dropdown icon item">
-    Book Space Guides
-    <i class="dropdown icon"></i>
-    <div class="menu">
-    <div class="header">Search</div>
-    <div class="ui category search item">
-    <div class="ui transparent icon input">
-    <input class="prompt" type="text" placeholder="Search Guides...">
-    <i class="search link icon"></i>
-    </div>
-    <div class="results"></div>
-    </div>
-    <div class="ui divider"></div>
-    <div class="header">Categories</div>
-    <a class="item first" href="formatting/">Formatting</a><a class="item" href="elements/">Elements</a><a class="item last" href="collections/">Collections</a>
-    </div>
-    </div>
-    <div class="custom link item">
-    Semantic Docs
-    <i class="dropdown icon"></i>
-    </div>
-    <div class="right menu">
-    <div class="ui right aligned category search item">
-    <div class="ui icon input">
-    <input class="prompt" type="text" placeholder="Search My GitHub Repos...">
-    <i class="search link icon"></i>
-    </div>
-    <div class="results"></div>
-    </div>
-    </div>-->
+
     </nav>
     <div class="ui guide popup">
         <div class="dividing header">Search</div>
@@ -189,12 +152,7 @@
                 Book Space
             </div>
         </div>
-        <!--<div class="item">
-    <div class="ui inverted transparent left icon input">
-    <input type="text" placeholder="Search...">
-    <i class="search icon"></i>
-    </div>
-    </div>-->
+  
         <div class="item submenu">
 
             <div class="menu">
@@ -245,16 +203,6 @@
             </div>
         </div>
 
-        <!--<div class="item submenu">
-    Book Space Quick Guides
-    <div class="menu">
-    <a class="item first" href="formatting/">Formatting</a><a class="item" href="elements/">Elements</a><a
-    class="item last" href="collections/">Collections</a>
-    </div>
-    </div>
-    <a class="item">Book Space's Developer</a>
-    <a class="item" href="https://semantic-ui.com/" target="_blank">Semantic UI</a>
-    <a class="item" href="https://fomantic-ui.com/" target="_blank">Fomantic UI</a>-->
     </nav>
     <div class="pusher">
         <header class="ui inverted vertical center aligned raised segment masthead in" id="masthead">
@@ -291,35 +239,7 @@
                     <div class="ui icon item">
                         <i class="ui bars icon"></i>
                     </div>
-                    <!--<div class="ui simple dropdown icon item">
-                Pages
-                <i class="ui dropdown icon"></i>
-                <div class="inverted menu">
-                <a class="item first active" href="/">Home</a><a class="item" href="showcase">Showcase</a><a
-                class="item" href="kitchen-sink">Kitchen Sink</a><a class="item" href="clean/">Clean</a><a
-                class="item" href="guides/">Guides</a><a class="item last" href="error-codes/">Status
-                Codes</a>
-                </div>
-                </div>
-                <div class="ui simple dropdown icon item">
-                Guides
-                <i class="dropdown icon"></i>
-                <div class="inverted menu">
-                <div class="header">Categories</div>
-                <a class="item first" href="formatting/">Formatting</a><a class="item"
-                href="elements/">Elements</a><a
-                class="item last" href="collections/">Collections</a>
-                </div>
-                </div>
-                <div class="right menu">
-                <div class="ui right aligned category search item">
-                <div class="ui inverted transparent icon input">
-                <input class="prompt" placeholder="Search My GitHub Repos..." type="text">
-                <i class="inverted search link icon"></i>
-                </div>
-                <div class="results"></div>
-                </div>
-                </div>-->
+                   
                 </nav>
             </div>
             <div class="ui text container">
@@ -327,7 +247,7 @@
                     <div class="reveal">Book Space</div>
                 </div>
                 <h2 class="ui inverted header">
-                    Book Space is your best source to buy books online, make online book purchases
+                    Book Space is your best source to buy books online
                     <!--The most themantic<sup class="tool-tip" data-html="">?</sup> MODx Extra template!-->
                 </h2>
                 <a class="ui huge inverted primary basic button" href="#get-started">
@@ -341,7 +261,7 @@
                     <div class="row">
                         <div class="eight wide column">
                             <h1 name="get-started">Donate your Books</h1>
-                            <p>" Happiness doesn't result from what we get, but from what we give "</p>
+                            <p>"Happiness doesn't result from what we get, but from what we give"</p>
                             <br>
                             <p>Helping one person might not change the whole world, but it could change the world for one person</p>
                             <br>
@@ -364,16 +284,13 @@
                             </div>
                             <!-- <p>If you are trying to create a <strong>landing page</strong>, <strong>blog</strong>, <strong>corporate website</strong>, or even an <strong>eCommerce shop</strong>, Book Space is a perfect means to get you started. With this template you are able to achieve a plethora of different looks, indistinguishable from one another.</p> -->
                             <p>Our mission is to help people who have interest to study</p>
-                            <!-- <p>Our website offers books for free to the people who are in need</p> -->
+                            
                             <p>Book Space accepts books with pride</p>
                             <p>Assured books are enlisted on the website</p>
                             <p>Storing and Maintaining the Book Quality</p>
                             <p>Shipping books to Reader Door Step</p>
                             <p>Sharing is Caring!</p>
-                            <!-- <div class="ui right floated compact secondary animated button" tabindex="0"> -->
-                            <!-- <div class="visible content">View Themes</div> -->
-                            <!-- <div class="hidden content"><i class="right arrow icon"></i></div> -->
-                            <!-- </div> -->
+                         
                             </a>
                         </div>
                         <div class="middle aligned column">
@@ -382,21 +299,16 @@
                                     <h4>What You Should Do?</h4>
                                 </div>
                             </div>
-                            <!-- <p>Book Space comes with built-in examples that work out of the box. You can easily customize them to fit exactly what you need allowing you to have complete design freedom. So whether you're a beginner or a seasoned professional, using Book Space will provide a modern and customizable user interface that's sure to satisfy.</p> -->
+                           
                             <p>Just Order books and sit back and relax</p>
                             <p>Our executives will get you the books as soon as possible</p>
                             <p>Help others by donating your old books</p>
                             <p>Fill Up the Donation Form get Books Ready</p>
-                            <p>Handover Books to FlyWithBooks at your Door-step</p>
+                            <p>Handover Books to Book Space at your Door-step</p>
                             <p>Enjoy the Art Of Sharing!</p>
 
 
-                            <!-- <a href="guides/" target="_blank">
-                        <div class="ui right floated compact secondary animated button" tabindex="0">
-                        <div class="visible content">Book Space Guides</div>
-                        <div class="hidden content"><i class="right arrow icon"></i></div>
-                        </div>
-                        </a>-->
+                    
                         </div>
                     </div>
                 </div>
@@ -406,167 +318,29 @@
                     <div class="row">
                         <div class="middle aligned nine wide column">
                             <h2 class="ui header">Shop all kinds of books</h2>
-                            <!-- <p><em>Book Space is the love child between MODx and Semantic UI.</em></p>
-                        <p>With Book Space, you'll have access to Semantic's components library in the form of MODx Elements
-                        called Snippets and Chunks. These Elements contain Property Values which allow you to specify how to
-                        use Semantic's Component's Definitions like Types, Variations, States, etc.</p>
-                        <p>Snippets will allow for more dynamic output of Semantic's Components whereas Chunks are the static
-                        bare bones of Symantic's syntax.</p>
-                        <p></p> -->
+                     
                             <br> CAT, NCERT. FINANCE, ACADEMIC, DICTIONARY, NON FICTION, SCHOOL LEVEL, FICTION BOOKS, NATIONAL EXAMS, CHILDREN BOOKS ARE AVAILABLE HERE
                         </div>
                         <div class="middle aligned seven wide column">
                             <div class="ui secondary top attached mini tabular menu">
                                 <a href="/store/"><input type="image" alt="Submit" class="ui large rounded bordered image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtjTnZSzWAR_2xF9LmhANGZUlUlghMQ8aHOw&usqp=CAU"></div></a>
-                                <!--<div class="header item">
-                                Modal Snippet
-                            </div>
-                            <div class="item" data-tab="syntax">Syntax</div>
-                            <div class="item" data-tab="output">Output</div>
-                            <div class="item" data-tab="rendered">Rendered</div>-->
+                            
                                 <div class="right icon menu">
                                     <a class="item" id="codeCopy" onclick="codeToClipboard()">
-                                        <!--<i class="copy outline icon"></i>-->
+                                        
                                     </a>
                                 </div>
                             </div>
-                            <!--<div class="ui tab" data-tab="syntax">
-                            <div class="ui tertiary fitted bottom attached segment">
-                                <pre><code id="copyCode">&#91;&#91;!ThemanticModal?
-                                &amp;header=&#96;Example Modal&#96;
-                                &amp;msg=&#96;Here&#039;s an example of a tiny-sized modal with a header and image content! You can use a transition effect&amp;mdash;in this case a &#039;fade&#039; effect. Also, when activated, it blurs the content in the background.&lt;/p&gt;
-                                &lt;p&gt;This modal also disables the dimmer from being closed by forcing the user to click the &#039;Okay&#039; button or the &#039;X&#039; icon at the top-right!&#96;
-                                &amp;size=&#96;small&#96;
-                                &amp;actionCancel=&#96;0&#96;
-                                &amp;image=&#96;1&#96;
-                                &amp;closable=&#96;false&#96;
-                                &amp;transition=&#96;vertical flip&#96;
-                                &amp;imgsize=&#96;medium&#96;
-                                &amp;blur=&#96;true&#96;
-                                &amp;attach=&#96;.blue.button&#96;
-                                &amp;imgsrc=&#96;/assets/themes/fomantic-ui/images/wireframe/image-square.png&#96;
-                                &#93;&#93;</code></pre>
-                            </div>
-                        </div>-->
-                            <!--<div class="ui tab" data-tab="output">
-                            <div class="ui tertiary fitted bottom attached segment">
-                                <pre><code>&#x3C;div class=&#x22;ui small modal&#x22;&#x3E;
-                                &#x3C;i class=&#x22;close icon&#x22;&#x3E;&#x3C;/i&#x3E;
-                                &#x3C;div class=&#x22;header&#x22;&#x3E;Example Modal&#x3C;/div&#x3E;
-                                &#x3C;div class=&#x22;image content&#x22;&#x3E;
-                                &#x3C;div class=&#x22;ui medium image&#x22;&#x3E;
-                                &#x3C;img class=&#x22;ui medium image&#x22; src=&#x22;/assets/themes/fomantic-ui/images/wireframe/image-square.png&#x22;&#x3E;
-                                &#x3C;/div&#x3E;
-                                &#x3C;div class=&#x22;description&#x22;&#x3E;
-                                &#x3C;p&#x3E;Here&#x27;s an example of a tiny-sized modal with a header and image content! You can use a transition effect&#x26;mdash;in this case a &#x27;fade&#x27; effect. Also, when activated, it blurs the content in the background.&#x3C;/p&#x3E;
-                                &#x3C;p&#x3E;This modal also disables the dimmer from being closed by forcing the user to click the &#x27;Okay&#x27; button or the &#x27;X&#x27; icon at the top-right!&#x3C;/p&#x3E;
-                                &#x3C;/div&#x3E;
-                                &#x3C;/div&#x3E;
-                                &#x3C;div class=&#x22;actions&#x22;&#x3E;
-                                &#x3C;div class=&#x22;ui green ok inverted button&#x22;&#x3E;
-                                &#x3C;i class=&#x22;checkmark icon&#x22;&#x3E;&#x3C;/i&#x3E;
-                                Okay
-                                &#x3C;/div&#x3E;
-                                &#x3C;/div&#x3E;
-                                &#x3C;/div&#x3E;
-                                &#x3C;script&#x3E;
-                                $(&#x22;.ui.small.modal&#x22;)
-                                .modal({
-                                blurring: true,
-                                })
-                                .modal(&#x22;setting&#x22;, &#x22;transition&#x22;, &#x22;vertical flip&#x22;)
-                                .modal(&#x22;setting&#x22;, &#x22;closable&#x22;, false)
-                                .modal(&#x22;attach events&#x22;, &#x22;.blue.button&#x22;, &#x22;show&#x22;)
-                                ;
-                                &#x3C;/script&#x3E;</code></pre>
-                            </div>
-                        </div>
-                        <div class="ui tab" data-tab="rendered">
-                            <div class="ui tertiary very padded center aligned basic segment">
-                                <h2 class="ui icon header">
-                                    <i class="window maximize outline icon"></i>
-                                    <div class="content">
-                                        Example Modal
-                                        <div class="sub header">Click the button below to launch the modal</div>
-                                    </div>
-                                </h2>
-                                <br>
-                                <a class="ui massive blue button" data-inverted=""
-                                   data-position="bottom center" data-tooltip="Click this button to show the modal!">Show
-                                    Modal</a>
-                            </div>
-                        </div>-->
+                            
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- <section class="ui very padded secondary vertical segment">
-            <div class="ui very relaxed stackable two column grid container">
-                <div class="column">
-                    <span class="ui big blue alternative-font text">Here is just a few things that people are saying about using Book Space...</span>
-                    <div class="ui clearing blue segment" id="testimonial">
-                        <div class="ui huge primary right corner label"><i aria-hidden="true"
-                                                                           class="quote right icon"></i>
-                        </div> -->
-            <!-- <p>I can tell you that using Book Space has made my job easier when creating a website using
-                            MODX. Thank
-                            you to the Book Space team!</p> -->
-            <!-- <div class="ui basic compact left floated segment">
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                        </div>
-                        <div class="ui right floated left aligned header">
-                            <div class="content">
-                                Jane Doe
-                                <div class="sub header">Lead Developer</div>
-                            </div>
-                            <img alt="" class="ui middle aligned large circular image"
-                                 src="https://placehold.co/150x150">
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui clearing blue segment" id="testimonial">
-                        <div class="ui huge primary right corner label">
-                            <i aria-hidden="true" class="quote right icon"></i>
-                        </div>
-                        <p>I was in need of a quick boilerplate. When I stumbled upon Book Space, I was over-joyed. Book
-                            Space
-                            made my job almost effortless and I was up in no time! Thank you Book Space!</p>
-                        <div class="ui basic compact left floated segment">
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                            <i aria-hidden="true" class="yellow star icon"></i>
-                            <i aria-hidden="true" class="yellow star half icon"></i>
-                        </div>
-                        <div class="ui right floated left aligned header">
-                            <div class="content">John Handcock
-                                <div class="sub header">Facade Industries, CEO</div>
-                            </div>
-                            <img alt="" class="ui middle aligned large circular image"
-                                 src="https://placehold.co/150x150">
-                        </div>
-                    </div>
-                    <div class="ui right floated right aligned basic compact segment">
-                        <span class="ui big blue alternative-font text">...and we thank them for their kind words.</span>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+      
             <section class="ui very padded secondary vertical segment">
                 <div class="ui very relaxed stackable two column grid container">
                     <div class="column">
-                        <!--Handwriting-->
-                        <!--<span class="ui big blue alternative-font text">Here is just a few things that people are saying about using Book Space...</span>
-                    <div class="ui clearing blue segment" id="testimonial">
-                        <div class="ui huge primary right corner label"><i aria-hidden="true" class="quote right icon"></i>
-                        </div>
-                        
-                    </div>-->
+                 
                         <h2 class="ui header">Hall Of Fame</h2>
                         <br>
                         <p>Our website provides the top 15 donors are posted in the Hall of Fame with their names, photos and contact information.</p><p>It deals with the people who donates the most number of books to BOOK SPACE website.</p><p>For them will be providng coupons and gifts.</p><p>Website will present hall of fame people special book of the year</p>
@@ -585,11 +359,11 @@
                         <div class="column">
                             <h2>About Us</h2>
                             <p>Worry not! Because Book Space is here to answer all your literary prayers. Knowledge is priceless but the books come with a bill and the Book Space is committed to bring to you the best of the brilliant from the world of written text, at prices which are literally a steal.</p>
-                            <a class="ui small icon button" href="/aboutus/" target="l">About us<i class="angle double right icon"></i></a>
+                            <a class="ui small icon button" href="/aboutus/" target="">About Us<i class="angle double right icon"></i></a>
                         </div>
                         <div class="column">
                             <h2>Contact Us</h2>
-                            <p>Just send us your questions or concerns by starting a new case and we will give you the help you need.Chat with a member of our in-house team.Please use this contact form to get in touch with the Book Space team.Can Contact the webiste 24/7. </p>
+                            <p>Just send us your questions or concerns by starting a new case and we will give you the help you need. Chat with a member of our in-house team. Please use this contact form to get in touch with the Book Space team. Can Contact the webiste 24/7. </p>
                             <a class="ui small icon button" href="/contactus/" target="">Contact Us <i
                                 class="angle double right icon"></i></a>
                         </div>
@@ -614,35 +388,15 @@
                                 <div class="ui big input">
                                     <input data-validate="email" name="email" placeholder="E-mail" type="text">
                                 </div>
-                                <!--<button class="ui big secondary submit button" type="submit" value="Subscribe">Sign-up</button>-->
-                                <a class="ui big secondary submit button" href="/comingsoon/" target="blank">Sign-up</a>
+                                
+                                <a class="ui big secondary submit button" href="/comingsoon/">Sign-up</a>
 
                             </div>
                         </form>
                     </div>
                 </div>
             </section>
-            <!--<section class="ui vertical segment">
-                <div class="ui equal width stackable grid">
-                    <div class="center aligned row">
-                        <div class="column">
-                            <a href="//modx.com/" target="_blank" title="MODX | The Digital Experience Platform">
-                                <img alt="" class="disabled ui medium centered image" src="http://pac-man.demondevin.modxcloud.com/assets/components/themantic/images/modx-grey.png">
-                            </a>
-                        </div>
-                        <div class="column">
-                            <a href="//semantic-ui.com/" target="_blank" title="Semantic UI | The Language of the Web">
-                                <img alt="" class="disabled ui medium centered image" src="http://pac-man.demondevin.modxcloud.com/assets/components/themantic/images/semantic-grey.png">
-                            </a>
-                        </div>
-                        <div class="column">
-                            <a href="//portableappz.x10.mx/" target="_blank" title="Softables | Another PortableApps Resource">
-                                <img alt="" class="disabled ui medium centered image" src="http://pac-man.demondevin.modxcloud.com/assets/components/themantic/images/softables-grey.png">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
+            
         </main>
         <footer class="site-footer" id="colophon">
             <div class="container">
@@ -654,28 +408,13 @@
                                     <h4 class="ui inverted header">Rate Our Website</h4>
                                     <div 0 class="ui massive violet rating" data-icon="award" data-max-rating="5"></div>
                                     <h4 class="ui inverted header">Brought To You By</h4>
+                                    <p>Anirudh Jakhotia</p>
                                     <p>Neeraj Dusa</p>
                                     <p>Harish Mullagura</p>
                                     <p>Jayanth Sriram</p>
                                     <p>Rakesh Ganeshula</p>
-                                    <p>Anirudh Jakhotia</p>
+                                    
 
-                                    <!--<div class="clearfix">
-                                        <a class="app-button apple-button clearfix" href="http://modx.com/">
-                                            <div class="fleft"><i class="modx icon"></i></div>
-                                            <div class="fright">
-                                                <span class="avail-text">Available for</span>
-                                                <span class="app-service">Book Space</span>
-                                            </div>
-                                        </a>
-                                        <a class="app-button android-button clearfix" href="http://semantic-ui.com/">
-                                            <div class="fleft"><i class="stripe s icon"></i></div>
-                                            <div class="fright">
-                                                <span class="avail-text">Made with</span>
-                                                <span class="app-service">Book Space</span>
-                                            </div>
-                                        </a>
-                                    </div>-->
                                 </div>
                             </aside>
                         </div>
@@ -718,7 +457,7 @@
                                         </div>
                                         <div class="clear"></div>
                                         <div class="newsletter-text">You can opt out of our newsletters at any time. See our
-                                            <a href="#">privacy policy</a>.
+                                            <a target="_blank" href="/privacy/">privacy policy</a>.
                                         </div>
                                     </form>
                                 </div>
@@ -728,11 +467,6 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="footer_copy">
-                    <p>Copyright © All Rights Reserved. <a href="/">Book Space</a>
-                        <nav class="site-footer-nav" id="footer-nav">
-                        </nav>
-                </div>-->
             </div>
         </footer>
         <section class="ui inverted vertical segment">
@@ -764,8 +498,8 @@
                             <a class="item" href="/">Home</a>
                             <a class="item" href="/store/">Shop</a>
                             <a class="item" href="/donate/">Donate</a>
-                            <a class="item" href="/comingsoon/">Licenses</a>
-                            <a class="item" href="/comingsoon/">Privacy</a>
+                            <a class="item" target="_blank" href="/license/">Licenses</a>
+                            <a class="item" target="_blank" href="/privacy/">Privacy</a>
                         </div>
                     </div>
                 </div>

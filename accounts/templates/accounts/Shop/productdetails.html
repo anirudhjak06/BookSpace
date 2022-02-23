@@ -4,6 +4,7 @@
 <html>
     <head>
         <title>{{product.name}}</title>
+        <link rel = "icon" href = "{% static '/images/logo5.png' %}" type = "image/png">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,40 +87,42 @@
 
         <div class="topnav" id="myTopnav">
 
-		<a href="{% url 'home' %}" style="text-decoration:none;">LOGO</a>
+            <div style="float: left;">
+                <a href="/home/"><img width='220' height='31' src={% static '/images/logo3.png' %}></a> 
+            </div>
 
-		<a href="{% url 'store' %}"><i class="fa fa-fw fa-shopping-bag"></i> Shop</a>
-		<a href="{% url 'donate' %}"><i class="fa fa-fw fa-gift"></i> Donate</a>
-		<a href="{% url 'halloffame' %}"><i class=" fa fa-fw fa-user "></i> Hall Of Fame</a>
-		<a href="{% url 'aboutus' %}"><i class="fa fa-fw fa-info "></i> About</a>
+            <a class="active"><i class="fa fa-fw fa-shopping-bag"></i> Shop</a>
+            <a href="{% url 'donate' %}"><i class="fa fa-fw fa-gift"></i> Donate</a>
+            <a href="{% url 'halloffame' %}"><i class=" fa fa-fw fa-user "></i> Hall Of Fame</a>
+            <a href="{% url 'aboutus' %}"><i class="fa fa-fw fa-info "></i> About</a>
 
 
-		<div class="login-container">
-			<a href="{% url 'accountdetails' %}"class="hello-msg">Hello, {{request.user.customer}}</a>
-			{% if request.user.is_active %}
-			<a class="hello-msg12" href="{% url 'logout' %} ">Logout</a>
-			{% else %}
-			<a class="hello-msg12" href="{% url 'login' %} ">Login</a>
-			{% endif %}
-			
+            <div class="login-container">
 
-			<div class="form-inline2 my-2 my-lg-0">
-	     	
-				<a class="hello-msg" href="{% url 'cart' %}">
-					<img  id="cart-icon" src="{% static 'images/Shop/cart.png' %}">
-				</a>
-				<p class="hello-msg" id="cart-total">{{cartItems}}</p>
+                {% if request.user.is_active %}
+                <a href="{% url 'accountdetails' %}">Hello, {{request.user.customer}}</a> 
+                <a class="hello-msg12" href="{% url 'logout' %}">Logout</a> {% else %}
+                <a href="{% url 'accountdetails' %}">Hello, {{request.user}}</a> 
+                <a class="hello-msg12" href="{% url 'login' %}">Login</a> {% endif %}
 
-	    	</div>
-		</div>
+                <div class="form-inline2 my-2 my-lg-0">
 
-		
+                    <a class="hello-msg" href="{% url 'cart' %}">
+                        <img id="cart-icon" src="{% static 'images/Shop/cart.png' %}">
+                    </a>
+                    <p class="hello-msg" id="cart-total">{{cartItems}}</p>
 
-		<a class="icon " href="javascript:void(0); " onclick="myFunction() ">
-			<i class="fa fa-bars "></i>
-		</a>
+                </div>
+            </div>
 
-	</div>
+
+
+            <a class="icon " href="javascript:void(0); " onclick="myFunction() ">
+                <i class="fa fa-bars "></i>
+            </a>
+
+        </div>
+
 
         <div class="container">
             <h3>Product: {{product.name}}</h3><hr>

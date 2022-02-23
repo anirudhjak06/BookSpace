@@ -42,10 +42,11 @@
                     <input class="btn btn-sm btn-info col-lg-4" type="submit" value="Login">
                     <a class="btn btn-sm btn-warning col-lg-4 float-right" class="ml-2" href="{% url 'signup' %}">SignUp</a>
                 </div>
-                {{form.errors}} {% for message in messages %}
-
-                <p id="messages"> {{message}}</p>
-
+                
+                {{form.errors}} 
+                
+                {% for message in messages %}
+                    <p id="messages"> {{message}}</p>
                 {% endfor %}
 
                 <div>

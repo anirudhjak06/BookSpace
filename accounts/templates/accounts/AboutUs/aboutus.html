@@ -7,6 +7,9 @@
     <meta charset="utf-8">
     <title>About Us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "icon" href = "{% static '/images/logo5.png' %}" type = "image/png">
+
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -31,8 +34,9 @@
     <!--header part start-->
     <div class="topnav" id="myTopnav">
 
-        <a href="{% url 'home' %}" style="text-decoration:none;">LOGO</a>
-
+        <div style="float: left;">
+            <a href="/home/"><img width='220' height='31' src={% static '/images/logo3.png' %}></a> 
+        </div>
         <a href="{% url 'store' %}"><i class="fa fa-fw fa-shopping-bag"></i> Shop</a>
         <a href="{% url 'donate' %}"><i class="fa fa-fw fa-gift"></i> Donate</a>
         <a href="{% url 'halloffame' %}"><i class="fa fa-fw fa-user"></i> Hall Of Fame</a>
@@ -40,9 +44,11 @@
 
 
         <div class="login-container">
-            <a href="{% url 'accountdetails' %}">Hello, {{request.user.customer}}</a> {% if request.user.is_active %}
-            <a class="hello-msg" href="{% url 'logout' %}">Logout</a> {% else %}
-            <a class="hello-msg" href="{% url 'login' %}">Login</a> {% endif %}
+            {% if request.user.is_active %}
+                <a href="{% url 'accountdetails' %}">Hello, {{request.user.customer}}</a> 
+                <a class="hello-msg" href="{% url 'logout' %}">Logout</a> {% else %}
+                <a href="{% url 'accountdetails' %}">Hello, {{request.user}}</a> 
+                <a class="hello-msg" href="{% url 'login' %}">Login</a> {% endif %}
 
         </div>
 
@@ -124,6 +130,8 @@
                         <br>
                         <a href="{% url 'aboutus' %}" style="color: white; "><i></i>About Us</a>
                         <br>
+                        <a href="{% url 'contactus' %}" style="color: white;"><i></i> Contact Us</a>
+                        <br>
 
                     </p>
                 </div>
@@ -147,9 +155,9 @@
                     <p style="font-size:20px;text-transform: uppercase;font-weight: 800;" data-aos="slide-right">Help</p>
 
                     <p data-aos="slide-right">
-                        <a href="/comingsoon/" target="_blank" style="color: white;"><i></i>Privacy Policy</a>
+                        <a href="/privacy/" target="_blank" style="color: white;"><i></i>Privacy Policy</a>
                         <br>
-                        <a href="/comingsoon/" target="_blank" style="color: white;"><i></i>Terms and Conditions</a>
+                        <a href="/license/" target="_blank" style="color: white;"><i></i>License</a>
                         <br>
                         <a href="/comingsoon/" target="_blank" style="color: white;"><i></i>Book Condition Guidelines</a>
                         <br>
@@ -170,7 +178,7 @@
                     </p>
                     <p data-aos="slide-right"><i class="fa fa-home " aria-hidden="true " style="font-size:20px; "></i>&nbsp;India
                     </p>
-                    <p data-aos="slide-right"><i class="fa fa-envelope " aria-hidden="true "></i>&nbsp; <a href="mailto:bookspace30@gmail.com ">BookSpace</a></p>
+                    <p data-aos="slide-right"><i class="fa fa-envelope " aria-hidden="true "></i>&nbsp; <a href="mailto:bookspace30@gmail.com ">bookspace30</a></p>
                     <p data-aos="slide-right"><i class="fa fa-phone " aria-hidden="true "></i>&nbsp; + 01 234 567 88</p>
                     <p data-aos="slide-right"><i class="fa fa-print " aria-hidden="true "></i>&nbsp; + 01 234 567 89</p>
                 </div>

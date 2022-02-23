@@ -14,6 +14,17 @@ class OrderFilter(django_filters.FilterSet):
 		fields = '__all__'
 
 
+class OrderItemFilter(django_filters.FilterSet):
+	start_date = DateFilter(field_name="date_created", lookup_expr='gte')
+	# end_date = DateFilter(field_name="date_created", lookup_expr='lte')
+	# note = CharFilter(field_name='note', lookup_expr='icontains')
+	# check = OrderFilter(Order)
+
+	class Meta:
+		model = OrderItem
+		fields = '__all__'
+
+
 class ShopFilter(django_filters.FilterSet):
 	# start_date = DateFilter(field_name="date_created", lookup_expr='gte')
 	# end_date = DateFilter(field_name="date_created", lookup_expr='lte')

@@ -32,7 +32,7 @@
   right: 0;
   top: 0;
   visibility: hidden;
-  background: #FFF;
+  background: #FFF;l
 }
 
 html > .loading-overlay {
@@ -738,7 +738,7 @@ pre em * * {
 .masthead div.ui.inverted.header {
   margin-top: 1.5em;
   margin-bottom: 1em;
-  width: 100vw;
+  width: 200vw;
   font-weight: 200;
   font-family: 'Montserrat', sans-serif;
   font-size: 4em;
@@ -2674,6 +2674,7 @@ header.ui.jumbotron.segment {
   background-position: center;
   z-index: 1;
   background-color: black;
+  background-image: url("images/galaxy.jpg");
   background-blend-mode: normal;
   -webkit-user-select: none;
   -moz-user-select: none;

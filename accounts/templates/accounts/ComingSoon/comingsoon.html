@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
+
+  <link rel = "icon" href = "{% static '/images/logo5.png' %}" type = "image/png">
+
 <style>
 body, html {
   height: 100%;
@@ -46,7 +50,9 @@ hr {
 
 <div class="bgimg">
   <div class="topleft">
-    <p>Logo</p>
+    <div style="float: left;">
+            <a href="/home/"><img width='220' height='31' src={% static '/images/logo3.png' %}></a> 
+        </div>
   </div>
   <div class="middle">
     <h1>COMING SOON</h1>

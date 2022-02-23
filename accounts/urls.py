@@ -31,6 +31,9 @@ urlpatterns = [
     path('halloffame/', views.halloffame, name='halloffame'),
     path('accountdetails/', views.accountdetails, name='accountdetails'),
     path('faq/', views.faq, name='faq'),
+    path('privacy/', views.privacy, name='privacy'),
+    path('license/', views.license, name='license'),
+
 
     path('createorder/<str:pk>/', views.createOrder, name="createorder"),
     path('update_order/<str:pk>/', views.updateOrder, name="update_order"),

@@ -20,6 +20,7 @@ from django.http import JsonResponse
 import json
 import datetime
 from .utils import cookieCart, cartData, guestOrder
+from accounts.filters import OrderItemFilter
 
 
 # @unauthenticated_user
@@ -177,6 +178,11 @@ def aboutus(request):
 def faq(request):
     return render(request, 'accounts/Faq/faq.html')
 
+def privacy(request):
+    return render(request, 'accounts/LP/privacy.html')
+
+def license(request):
+    return render(request, 'accounts/LP/license.html')
 
 # @login_required(login_url='login')
 def halloffame(request):
@@ -207,10 +213,13 @@ def orderdetails(request):
     order_count = orders.count()
 
     myFilter = OrderFilter(request.GET, queryset=orders)
+    myFilter2 = OrderItemFilter(request.GET, queryset=orders)
+
     orders = myFilter.qs
+    orderitem = myFilter2.qs
 
     context = {'customer': customer, 'orders': orders, 'order_count': order_count,
-               'myFilter': myFilter}
+               'myFilter': myFilter, 'myFilter2': myFilter2, 'orderitem': orderitem}
     return render(request, 'accounts/AccountDetails/order.html', context)
 
 

@@ -7,6 +7,8 @@
 <head>
     <title>Account Details</title>
     <meta charset="utf-8">
+    <link rel = "icon" href = "{% static '/images/logo5.png' %}" type = "image/png">
+
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{% static '/css/AccountDetails/dashb.css' %}" rel="stylesheet" type="text/css">
@@ -25,11 +27,9 @@
         }
 
 
-        body {
-            background-image: url("https://i.pinimg.com/originals/e6/c1/a9/e6c1a9c51db5983bc88100648d5f3dfb.jpg");
-        }
-
-
+        body { 
+            background: linear-gradient(hsl(180, 100%, 50%), hsl(240, 100%, 27%));
+        } 
 
 
     </style>
@@ -39,8 +39,9 @@
 
 <div class="topnav" id="myTopnav">
 
-    <a href="{% url 'home' %}" style="text-decoration:none;">LOGO</a>
-
+    <div style="float: left;">
+        <a href="/home/"><img width='220' height='31' src={% static '/images/logo3.png' %}></a> 
+    </div>
     <a href="{% url 'store' %}"><i class="fa fa-fw fa-shopping-bag"></i> Shop</a>
     <a href="{% url 'donate' %}"><i class="fa fa-fw fa-gift"></i> Donate</a>
     <a href="{% url 'halloffame' %}"><i class=" fa fa-fw fa-user "></i> Hall Of Fame</a>
@@ -48,12 +49,11 @@
 
 
     <div class="login-container">
-        <a class="active">Hello, {{request.user.customer}}</a>
         {% if request.user.is_active %}
-        <a class="hello-msg12" href="{% url 'logout' %} ">Logout</a>
-        {% else %}
-        <a class="hello-msg12" href="{% url 'login' %} ">Login</a>
-        {% endif %}
+        <a href="{% url 'accountdetails' %}">Hello, {{request.user.customer}}</a> 
+        <a class="hello-msg12" href="{% url 'logout' %}">Logout</a> {% else %}
+        <a href="{% url 'accountdetails' %}">Hello, {{request.user}}</a> 
+        <a class="hello-msg" href="{% url 'login' %}">Login</a> {% endif %}
 
     </div>
 
@@ -71,7 +71,8 @@
         {% comment %} {{form.profile_pic}} {% endcomment %}
         <a href="{% url 'accountdetails' %}">My Account</a>
         <a class="active">Orders</a>
-        <a href="#contact">Wishlist</a>
+        <a href="">Donated: {{request.user.customer.booksdonated}}</a>
+        
     </p>
 </div>
 
@@ -87,18 +88,26 @@
     <table class="table table-sm">
         <tr>
             <th>Date Orderd</th>
-            <th>Product</th>
+            <th>Transaction ID</th>
+            <!--<th>Name</th>-->
+            <th>Quantity</th>
             <th>Status</th>
         </tr>
 
         {% for order in orders %}
-        <tr>
-            <td>{{order.date_ordered}}</td>
-            <td>{{order.product.name}}</td>
-            <td>{{order.status}}</td>
+            
+            <tr>
+                <td>{{order.date_ordered}}</td>
+                <!-- <td>{{Order.product}}</td> -->
+                <td>{{order.transaction_id}}</td>
+                <!--<td>{{order.get_name}}</td>-->
+
+                <td>{{order.get_cart_items}}</td>
+                <td>{{order.status}}</td>
 
 
-        </tr>
+            </tr>
+            
         {% endfor %}
     </table>
     <!--                </div>-->

@@ -14,4 +14,4 @@ admin.site.register(Donate)
 
 admin.site.register(OrderItem)
 admin.site.register(ShippingAddress)
-admin.site.register(FinalOrder)
+# admin.site.register(FinalOrder)

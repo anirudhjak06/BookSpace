@@ -7,6 +7,8 @@
     <title>Donate</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "icon" href = "{% static '/images/logo5.png' %}" type = "image/png">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static '/css/Donate/dashb.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/Donate/navb.css' %}">
@@ -35,7 +37,9 @@
 
     <div class="topnav" id="myTopnav">
 
-        <a href="{% url 'home' %}" style="text-decoration:none;">LOGO</a>
+        <div style="float: left;">
+            <a href="/home/"><img width='220' height='31' src={% static '/images/logo3.png' %}></a> 
+        </div>
 
         <a href="{% url 'store' %}"><i class="fa fa-fw fa-shopping-bag"></i> Shop</a>
         <a class="active"><i class="fa fa-fw fa-gift"></i> Donate</a>
@@ -44,12 +48,11 @@
 
 
         <div class="login-container">
-            <a href="{% url 'accountdetails' %}">Hello, {{request.user.customer}}</a> 
             {% if request.user.is_active %}
-            <a class="hello-msg" href="{% url 'logout' %}">Logout</a> 
-            {% else %}
-            <a class="hello-msg" href="{% url 'login' %}">Login</a> 
-            {% endif %}
+            <a href="{% url 'accountdetails' %}">Hello, {{request.user.customer}}</a> 
+            <a class="hello-msg" href="{% url 'logout' %}">Logout</a> {% else %}
+            <a href="{% url 'accountdetails' %}">Hello, {{request.user}}</a> 
+            <a class="hello-msg" href="{% url 'login' %}">Login</a> {% endif %}
 
         </div>
 
@@ -69,50 +72,49 @@
                 </h1>
                 <div class="input-container">
                     <i class="fa fa-user icon"></i>
-                    <input class="input-field" type="text" placeholder="First Name" name="fstnm">
-                    <input class="input-field" type="text" placeholder="Last Name" name="lsnm">
+                    <input class="input-field" type="text" placeholder="First Name" name="fstnm" required>
+                    <input class="input-field" type="text" placeholder="Last Name" name="lsnm" required>
                 </div>
 
                 <div class="input-container">
                     <i class="fa fa-envelope icon"></i>
-                    <input class="input-field" type="text" placeholder="Email" name="email">
+                    <input class="input-field" type="text" placeholder="Email" name="email" required>
                 </div>
 
                 <div class="input-container">
                     <i class="fa fa-phone icon"></i>
-                    <input class="input-field" type="text" placeholder="Phone Number" name="phone">
+                    <input class="input-field" type="text" placeholder="Phone Number" pattern="[0-9]+" name="phone" required>
                 </div>
 
                 <div class="input-container">
                     <i class="fa fa-book icon"></i>
-                    <input class="input-field" type="number" min="1" placeholder="Quantity Of Books" name="books">
+                    <input class="input-field" type="number" min="1" placeholder="Quantity Of Books" name="books" required>
                 </div>
 
                 <div class="input-container">
                     <i class="fa fa-home icon"></i>
-                    <input class="input-field" type="Name" placeholder="Door No" name="doorno">
+                    <input class="input-field" type="Name" placeholder="Door No" name="doorno" required>
                 </div>
                 <div class="input-container">
                     <i class="fa fa-map-pin icon"></i>
-                    <input class="input-field" type="Name" placeholder="Landmark" name="landmark">
+                    <input class="input-field" type="Name" placeholder="Landmark" name="landmark" required>
                 </div>
                 <div class="input-container">
                     <i class="fa fa-home icon"></i>
-                    <input class="input-field" type="Address" placeholder="City/Town" name="city">
+                    <input class="input-field" type="Address" placeholder="City/Town" name="city" required>
                 </div>
 
                 <div class="input-container">
                     <i class="fa fa-home icon"></i>
-                    <label for="country"></label>
-                    <input class="input-field" type="Address" placeholder="State" name="state">
+                    <input class="input-field" type="Address" placeholder="State" name="state" required>
                     
                 </div>
                 <div class="input-container">
                     <i class="fa fa-home icon"></i>
-                    <input class="input-field" type="PinCode" placeholder="Pin Code" name="pincode">
+                    <input class="input-field" type="PinCode" placeholder="Pin Code" name="pincode" required>
                 </div>
 
-                <button type=" submit " class="btn ">Submit</button>
+                <button type="submit" class="btn">Submit</button>
             </form>
 
         </div>

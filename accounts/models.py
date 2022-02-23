@@ -113,6 +113,11 @@ class Order(models.Model):
         total = sum([item.quantity for item in orderitems])
         return total
 
+    @property
+    def get_name(self):
+        orderitems = self.orderitem_set.all()
+        return orderitems
+
 
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
@@ -121,7 +126,7 @@ class OrderItem(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "%s - %s - orderd - %s" % (self.order.id, self.order.customer.name, self.product.name)
+        return "%s) Name - %s, Book - %s, Quantity-%s" % (self.order.id, self.order.customer.name, self.product.name, self.quantity)
 
     @property
     def get_total(self):
@@ -140,22 +145,6 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return "%s - %s - with transaction id - %s" % (self.order.id, self.city, self.order.transaction_id)
-
-
-class FinalOrder(models.Model):
-    customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
-    product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
-    date_ordered = models.DateTimeField(auto_now_add=True, null=True)
-    order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
-    # address = models.CharField(max_length=200, null=False)
-    # city = models.CharField(max_length=200, null=False)
-    # state = models.CharField(max_length=200, null=False)
-    # zipcode = models.CharField(max_length=200, null=False)
-    # quantity = models.ForeignKey(OrderItem.quantity, null=True, on_delete=models.SET_NULL)
-    # price2 = models.FloatField(null=True)
-
-    def __str__(self):
-        return self.customer.name
 
 
 class Contact(models.Model):
