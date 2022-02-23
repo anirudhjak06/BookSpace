@@ -66,7 +66,7 @@ For more details about the project please refer to [**"Book Space Documentation.
 #### NOTE: All the required packages can be downloaded by running the command 
 ```pip install -r requirements.txt```
 
-★ Next run the command: ```python mangage.py makemigrations```
+★ Next run the command: ```python manage.py makemigrations```
 
 ★ Next run the command: ```python manage.py migrate```
 
